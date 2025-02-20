@@ -18,4 +18,30 @@ In this project, we explore two main strategies for bug priority prediction:
   
   Additionally, we use Focal Loss to mitigate the impact of class imbalance.
 
-  
+ ## Visualizations
+
+This section contains key visualizations that provide insights into the dataset and model architecture.
+
+### 1️⃣ Class Distribution of Bug Priorities
+The dataset exhibits a strong class imbalance, with Priority 2 being the most frequent. The following plot visualizes the distribution of bug priority levels in the training dataset.
+
+![Class Distribution](Screenshot%202025-02-19%20235524.png)
+
+### 2️⃣ Word Cloud for Bug Titles
+The word cloud highlights the most frequently occurring words in bug titles. Common words such as *"error"*, *"crash"*, *"fail"*, and *"load"* indicate the prevalent types of issues reported.
+
+![Word Cloud](Screenshot%2025-02-20%012940.png)
+
+### 3️⃣ Normalized Priority Distribution Across Top 34 Components
+The heatmap below illustrates how different software components are associated with bug priority levels. Some components exhibit a higher concentration of urgent (Priority 0) or low-priority (Priority 4) bugs.
+
+![Normalized Priority Distribution](Screenshot%2025-02-19%235813.png)
+
+### 4️⃣ High-Level Multi-Modal RoBERTa Architecture
+The following diagram illustrates our **two-stage multi-modal RoBERTa** approach. The model integrates:
+- **RoBERTa** for textual feature extraction.
+- **Learnable embeddings** for categorical variables.
+- **A lightweight MLP** for numeric features.
+- A **final classification layer** that predicts the bug priority level.
+
+![Multi-Modal RoBERTa Architecture](_-%visual%selection.png)
